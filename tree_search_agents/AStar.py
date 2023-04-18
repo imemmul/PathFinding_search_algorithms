@@ -19,7 +19,6 @@ class AStarAgent(TreeSearchAgent):
         :param env: Environment
         :return: List of actions and total score
         """
-        # total_score = []
         # print(f"pq before {pq.queue}")
         # print(pq.queue)
         pq = PriorityQueue()  # priority queue to keep track of the frontier
@@ -32,7 +31,7 @@ class AStarAgent(TreeSearchAgent):
             curr_obj = pq.dequeue()
             curr_state = curr_obj[0][-1] # returns current state
             env.set_current_state(curr_state)
-            # print(f"where am i {env.current_position}")
+            print(f"where am i {env.current_position}")
             # print(f"curr_state {curr_obj}")
             curr_reward = curr_obj[2]
             # print(f"pq {pq.queue}")
@@ -56,7 +55,7 @@ class AStarAgent(TreeSearchAgent):
                     new_action_list = curr_obj[1].copy()
                     new_action_list.append(action)
                     new_score = new_reward + curr_reward # keeps total score
-                    new_pri = -self.get_heuristic_manhattan_goal(env, next_state) + new_score # calculates straight_line distance and adds new_reward to it
+                    new_pri = -self.get_heuristic_manhattan_goal(env, next_state) + new_score # k*-1 calculates straight_line distance and adds new_reward to it
                     pq.enqueue((new_path, new_action_list, new_score), new_pri)
                 env.set_current_state(curr_state)
         # print(f"results {results}")
@@ -99,7 +98,7 @@ class AStarAgent(TreeSearchAgent):
     #                 break
     #             # elif len(results) == len(env.get_goals()):
     #             #     return max(results, key=lambda x: x[2])
-    #             print(f"curr node {curr_state}")
+    #             # print(f"curr node {curr_state}")
     #             # print(f"i am in position of {env.to_position(curr_state)}")
     #             # print(f"my action to achieve {curr_obj[1]}")
     #             visited.add(curr_state)
@@ -114,8 +113,8 @@ class AStarAgent(TreeSearchAgent):
     #                     new_path.append(next_state)
     #                     new_action_list = curr_obj[1].copy()
     #                     new_action_list.append(action)
-    #                     new_pri = -self.get_heuristic(env, next_state, goal) + new_reward # calculates straight_line distance and adds new_reward to it
     #                     new_score = new_reward + curr_reward # keeps total score
+    #                     new_pri = -self.get_heuristic(env, next_state, goal) + new_score # calculates straight_line distance and adds new_reward to it
     #                     pq.enqueue((new_path, new_action_list, new_score), new_pri)
     #                 env.set_current_state(curr_state)
     #     # print(f"results {results}")
