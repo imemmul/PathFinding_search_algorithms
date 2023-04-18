@@ -36,9 +36,6 @@ class UCSAgent(TreeSearchAgent):
         # total_score = []
         # print(f"pq before {pq.queue}")
         # print(pq.queue)
-        expansion_list = []
-        total_score = 0
-        actions = []
         visited = set()  # set to keep track of explored nodes
         while not pq.is_empty():
             # print(f"whole queue {pq.queue}")
