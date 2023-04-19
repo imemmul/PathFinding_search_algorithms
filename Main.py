@@ -25,7 +25,6 @@ if __name__ == "__main__":
     agents = [tree_search_agents.AStarAgent(), tree_search_agents.UCSAgent()]
 
     actions = ["UP", "LEFT", "DOWN", "RIGHT"]
-    print(f"**************{file_name}**************")
     for agent in agents:
         print("*" * 50)
         print(agent.name)

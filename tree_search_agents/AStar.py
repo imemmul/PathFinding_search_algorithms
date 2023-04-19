@@ -1,7 +1,7 @@
 """
-    Name:
-    Surname:
-    Student ID:
+    Name: Emir
+    Surname: Ulurak
+    Student ID: S020526
 """
 
 
@@ -31,7 +31,7 @@ class AStarAgent(TreeSearchAgent):
             curr_obj = pq.dequeue()
             curr_state = curr_obj[0][-1] # returns current state
             env.set_current_state(curr_state)
-            print(f"where am i {env.current_position}")
+            # print(f"where am i {env.current_position}")
             # print(f"curr_state {curr_obj}")
             curr_reward = curr_obj[2]
             # print(f"pq {pq.queue}")

@@ -1,7 +1,7 @@
 """
-    Name:
-    Surname:
-    Student ID:
+    Name: Emir
+    Surname: Ulurak
+    Student ID: S020526
 """
 
 from tree_search_agents.TreeSearchAgent import *
